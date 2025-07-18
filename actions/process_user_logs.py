@@ -3,6 +3,8 @@ import json
 import os
 from pathlib import Path
 
+from scripts.run_finetuning_and_update import run_automated_iterative_finetuning
+
 
 def process_new_feedback():
     """
@@ -75,6 +77,8 @@ def process_new_feedback():
             f.write(latest_timestamp)
     else:
         print("No new feedback to process.")
+
+    run_automated_iterative_finetuning()
 
 
 if __name__ == "__main__":

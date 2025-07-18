@@ -29,96 +29,165 @@
     </div>
 
     <script>
-        const API_URL = 'http://127.0.0.1:5000/api/chatlogs'; // The URL of your Flask backend
-        const ctx = document.getElementById('emotionChart').getContext('2d');
-        const statusMessage = document.getElementById('status-message');
-        let emotionChart; // This variable will hold our chart instance
-         // Get query parameters from the URL
-        const params = new URLSearchParams(window.location.search);
+        document.addEventListener('DOMContentLoaded', initializeApp);
 
-        // Extract the 'user' parameter
-        const nickname = params.get('user');
+const ctx = document.getElementById('emotionChart').getContext('2d');
+const statusMessage = document.getElementById('status-message');
+let emotionChart; // This variable will hold our chart instance
 
-        const emotionColors = { /* Color palette remains the same */ neutral: 'rgba(150, 150, 150, 0.7)', sadness: 'rgba(54, 162, 235, 0.7)', anger: 'rgba(255, 99, 132, 0.7)', fear: 'rgba(153, 102, 255, 0.7)', joy: 'rgba(255, 206, 86, 0.7)', surprise: 'rgba(75, 192, 192, 0.7)', suggestion: 'rgba(255, 159, 64, 0.7)' };
+// Color palette remains the same
+const emotionColors = {  sadness: 'rgba(54, 162, 235, 0.7)', anger: 'rgba(255, 99, 132, 0.7)', fear: 'rgba(153, 102, 255, 0.7)', joy: 'rgba(255, 206, 86, 0.7)', surprise: 'rgba(75, 192, 192, 0.7)', suggestion: 'rgba(255, 159, 64, 0.7)' };
 
-        // --- Main function to fetch data and initialize the app ---
-        async function initializeApp() {
-            try {
-                // 1. Fetch the data from the REST API
-                const response = await fetch('/api/chatlogs', {
+// Main function to fetch data and initialize the app
+async function initializeApp() {
+    // Get query parameters from the URL
+    const params = new URLSearchParams(window.location.search);
+    const nickname = params.get('user');
+
+    if (!nickname) {
+        statusMessage.textContent = "Error: No user specified in the URL. (e.g., ?user=John)";
+        statusMessage.style.display = 'block';
+        return;
+    }
+
+    try {
+        // 1. Fetch the data from the REST API for the specific user
+        const response = await fetch('/api/chatlogs', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                nickname:nickname
-        })
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+            body: JSON.stringify({ nickname: nickname })
+        }); // Correctly closed
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const userData = await response.json(); // Data is for one user
+
+        if (!userData || !userData.consent || userData.emotions.length === 0) {
+            statusMessage.textContent = `No emotion data found for user: ${nickname}`;
+            statusMessage.style.display = 'block';
+            return;
+        }
+
+        statusMessage.style.display = 'none'; // Hide loading message
+
+        // 2. Directly render the chart for that user
+        renderChartForUser(nickname, userData);
+
+    } catch (error) {
+        console.error("Failed to fetch chat data:", error);
+        statusMessage.textContent = "Error: Could not connect to the backend server.";
+        statusMessage.style.color = 'red';
+    }
+}
+
+// This function now only needs the user's data, not the whole collection
+function renderChartForUser(userName, userData) {
+    const labels = [];
+    const sentimentScores = [];
+    const annotations = [];
+
+    const emotionToScore = {
+        "positive": 0.5,
+        "joy": 0.5,
+        "surprise": 0.2,
+        "neutral": 0.0,
+        "sadness": -0.4,
+        "anger": -0.6,
+        "fear": -0.5,
+        "negative": -0.5,
+        "suggestion": 0.1
+    };
+
+    userData.emotions.forEach((entry, index) => {
+        labels.push(index + 1); // X-axis as message count
+        const score = emotionToScore[entry.emotion.toLowerCase()] ?? 0.0;
+        sentimentScores.push(score);
+        annotations.push(entry.emotion.toLowerCase());
+    });
+
+    if (emotionChart) {
+        emotionChart.destroy();
+    }
+
+    emotionChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Sentiment Score',
+                data: sentimentScores,
+                borderColor: 'purple',
+                backgroundColor: 'purple',
+                tension: 0.2,
+                fill: false,
+                pointStyle: 'circle',
+                pointRadius: 5,
+                pointHoverRadius: 7,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: `${userName}'s Emotional Trend`,
+                    font: { size: 20 }
+                },
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            const emotion = annotations[context.dataIndex];
+                            const score = context.formattedValue;
+                            return `${emotion} (${score})`;
+                        }
+                    }
                 }
-                const chatData = await response.json();
-                statusMessage.style.display = 'none'; // Hide loading message
-
-                // 2. Once data is loaded, build the UI
-                setupUI(chatData);
-
-            } catch (error) {
-                console.error("Failed to fetch chat data:", error);
-                statusMessage.textContent = "Error: Could not connect to the backend server. Please ensure it is running.";
-                statusMessage.style.color = 'red';
-            }
-        }
-
-        function setupUI(chatData) {
-            const buttonContainer = document.getElementById('user-buttons');
-
-            // Create buttons for each user
-            for (const userName in chatData) {
-                if (chatData[userName].consent && chatData[userName].emotions.length > 0) {
-                    const button = document.createElement('button');
-                    button.innerText = userName;
-                    button.addEventListener('click', () => renderChartForUser(userName, chatData));
-                    buttonContainer.appendChild(button);
+            },
+            scales: {
+                y: {
+                    min: -1,
+                    max: 1,
+                    title: {
+                        display: true,
+                        text: 'Sentiment Score (-1 to 1)'
+                    },
+                    grid: {
+                        drawBorder: true,
+                        color: '#ccc'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Message Count'
+                    }
+                }
+            },
+            elements: {
+                point: {
+                    pointStyle: 'circle'
                 }
             }
-
-            // Render a chart for the first available user on page load
-            const firstUser = Object.keys(chatData).find(u => chatData[u].consent && chatData[u].emotions.length > 0);
-            if (firstUser) {
-                renderChartForUser(firstUser, chatData);
-            } else {
-                 statusMessage.textContent = "No users with emotion data found.";
-                 statusMessage.style.display = 'block';
+        },
+        plugins: [{
+            id: 'label-points',
+            afterDatasetsDraw(chart) {
+                const {ctx, chartArea: {top}, data} = chart;
+                const meta = chart.getDatasetMeta(0);
+                meta.data.forEach((point, i) => {
+                    ctx.fillStyle = 'black';
+                    ctx.font = '12px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(annotations[i], point.x, point.y - 10);
+                });
             }
-        }
-
-        // This function now receives the full chatData object
-        function renderChartForUser(userName, chatData) {
-            const userData = chatData[userName];
-            const dailyEmotionCounts = {};
-            const allEmotions = new Set();
-
-            // Data processing logic remains the same as before
-            userData.emotions.forEach(entry => {
-                const date = entry.time.split(' ')[0];
-                const emotion = entry.emotion;
-                allEmotions.add(emotion);
-                if (!dailyEmotionCounts[date]) dailyEmotionCounts[date] = {};
-                if (!dailyEmotionCounts[date][emotion]) dailyEmotionCounts[date][emotion] = 0;
-                dailyEmotionCounts[date][emotion]++;
-            });
-
-            const labels = Object.keys(dailyEmotionCounts).sort();
-            const datasets = Array.from(allEmotions).map(emotion => {
-                const data = labels.map(label => dailyEmotionCounts[label][emotion] || 0);
-                return { label: emotion.charAt(0).toUpperCase() + emotion.slice(1), data: data, borderColor: emotionColors[emotion] || 'gray', backgroundColor: emotionColors[emotion] || 'gray', fill: false, tension: 0.1 };
-            });
-
-            // Destroy old chart and render new one
-            if (emotionChart) emotionChart.destroy();
-            emotionChart = new Chart(ctx, { type: 'line', data: { labels, datasets }, options: { /* Options are the same */ responsive: true, plugins: { legend: { position: 'top' }, title: { display: true, text: `Emotion Frequency for ${userName}`, font: { size: 18 } } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } } });
-        }
-
-        // Start the application when the page loads
-        document.addEventListener('DOMContentLoaded', initializeApp);
+        }]
+    });
+}
 
     </script>
 </body>

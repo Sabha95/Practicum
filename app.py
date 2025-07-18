@@ -7,7 +7,7 @@ from jsonpickle import json
 
 from utils.user_data import (
     get_user_data, set_user_data, log_emotion, get_emotion_history,
-    predict_emotion, generate_anonymous_nickname, log_feedback
+    predict_emotion, generate_anonymous_nickname, log_feedback, load_data
 )
 from pathlib import Path
 from datetime import datetime
@@ -16,13 +16,14 @@ logging.basicConfig(level=logging.DEBUG)
 
 RASA_API_URL = 'http://localhost:5005/webhooks/rest/webhook'
 
-DATA_FILE = Path(__file__).parent / "user_logs.json"
+DATA_FILE = Path(__file__).parent / "data/user_logs.json"
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 
 anonymous_counter = 0
 nickname = ""
+
 
 @app.before_request
 def track_user():
@@ -83,7 +84,7 @@ def webhook():
             saved_user_data = get_user_data(request.json['nickname'])
             if saved_user_data and bool(saved_user_data.get('consent')):
                 emotion = predict_emotion(user_message)
-                log_emotion(request.json['nickname'], user_message,emotion)
+                log_emotion(request.json['nickname'], user_message, emotion)
 
         else:
             bot_response = "Sorry, i did not understand that. "
@@ -93,6 +94,7 @@ def webhook():
 
     except Exception as e:
         print(f"Error is : {e}")
+
 
 @app.route('/feedback', methods=['POST'])
 def feedback():
@@ -109,7 +111,7 @@ def feedback():
     if not all([user_message, bot_response]):
         return jsonify({"error": "Missing fields"}), 400
 
-    log_feedback(nickname, bot_response, thumbs_up,user_message)
+    log_feedback(nickname, bot_response, thumbs_up, user_message)
 
     # user_data = get_user_data(nickname)
     # feedback_entry = {
@@ -133,17 +135,18 @@ def serve_chart_page():
     return render_template('emotion_chart.html')
 
 
-@app.route('/api/chatlogs', methods=['GET'])
+@app.route('/api/chatlogs', methods=['GET', 'POST'])
 def get_chat_logs():
     """
     This is the REST API endpoint. It reads the JSON data from the file
     and returns it to the client.
     """
     try:
-        with open(DATA_FILE, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        # jsonify correctly formats the data as a JSON response
-        return jsonify(data)
+        data = load_data()
+        nickname = request.json['nickname']
+        if nickname in data:
+            user_data = data[nickname]
+            return jsonify(user_data), 200
     except FileNotFoundError:
         return jsonify({"error": "Data file not found"}), 404
     except Exception as e:
@@ -152,6 +155,3 @@ def get_chat_logs():
 
 if __name__ == "__main__":
     app.run(debug=True, port=3000)
-
-
-

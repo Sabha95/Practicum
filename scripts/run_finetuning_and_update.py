@@ -16,7 +16,7 @@ TRAINING_FILE_PATH = "rl_data/reward.jsonl"
 
 # The file that tracks the lineage of your models.
 MODEL_TRACKING_FILE = "models/latest_gpt_model.txt"
-os.environ["OPEN_API_KEY"] = "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"
+
 
 
 def get_model_to_improve() -> str:
@@ -50,7 +50,7 @@ def run_automated_iterative_finetuning():
     # --- FIX: Added comprehensive error handling and checks ---
 
     # 1. Securely get API key
-    openai.api_key = os.environ.get("OPEN_API_KEY")
+    openai.api_key = os.environ.get("MY_SECRET_API_KEY")
     if not openai.api_key:
         print("❌ Error: OPENAI_API_KEY environment variable not set.")
         return

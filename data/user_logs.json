@@ -121,6 +121,12 @@
         "text": "Thanks",
         "emotion": "neutral",
         "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 14:16",
+        "text": "I am feeling unwell",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
       }
     ],
     "feedback": [
@@ -144,6 +150,13 @@
         "feedback": "isPositive",
         "reward": 1,
         "user_message": "i feel overwhelmed"
+      },
+      {
+        "time": "2025-07-18 14:16",
+        "bot_response": "I am sorry to hear that. Can you tell me a bit more about what is going on?",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "I am feeling unwell"
       }
     ]
   },
@@ -162,9 +175,36 @@
         "text": "Hi",
         "emotion": "neutral",
         "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 15:21",
+        "text": "i am not feeling good",
+        "emotion": "joy",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 15:21",
+        "text": "What if i dont clear my exams",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
       }
     ],
-    "feedback": []
+    "feedback": [
+      {
+        "time": "2025-07-18 15:20",
+        "bot_response": "Sorry, i did not understand that. ",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": "what if i cant submit the project on time"
+      },
+      {
+        "time": "2025-07-18 15:22",
+        "bot_response": "If you do not clear your exams, it may have some consequences such as having to reappear for the exam, delaying your academic progress, affecting your future job opportunities, and feeling disappointed. It is important to try your best to prepare for exams and seek help if needed to increase your chances of success. If you do not clear your exams, it is important to reflect on what went wrong, learn from your mistakes, and make a plan to improve in the future. Do not be too hard on yourself, everyone faces setbacks at some point.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "What if i dont clear my exams"
+      }
+    ]
   },
   "Keyuri": {
     "nickname": "Keyuri",
@@ -353,6 +393,12 @@
         "text": "hi",
         "emotion": "neutral",
         "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 16:12",
+        "text": "I am mad at my girlfriend, and hence cant concentrrate on my studies",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
       }
     ],
     "feedback": []
@@ -408,6 +454,12 @@
         "text": "hI",
         "emotion": "neutral",
         "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 15:24",
+        "text": "i still mad at a friend and i cant concentrate on my studies",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
       }
     ],
     "feedback": [
@@ -431,7 +483,20 @@
         "feedback": "isPositive",
         "reward": 1,
         "user_message": "i have manage everthing on my own , i feel overwhlemed"
+      },
+      {
+        "time": "2025-07-18 15:25",
+        "bot_response": "It's completely normal to feel upset with a friend, but it's important not to let it affect your studies. Here are a few things you can try to help you concentrate: 1) Take a break and do something that relaxes you, like going for a walk or listening to music. 2) Write down your feelings in a journal to help you process them. 3) Talk to someone you trust about what's going on, like a family member, teacher, or counselor. 4) Try to focus on the task at hand and remind yourself that your studies are important for your future. 5) If you're still struggling, consider reaching out to your friend to try and resolve the issue, or give yourself permission to table the conversation until a later, less stressful time.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i still mad at a friend and i cant concentrate on my studies"
       }
     ]
+  },
+  "Anisha": {
+    "nickname": "Anisha",
+    "consent": true,
+    "emotions": [],
+    "feedback": []
   }
 }

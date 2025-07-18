@@ -5,18 +5,20 @@ from typing import Any, Text, Dict, List
 from openai import OpenAI
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-
+from dotenv import load_dotenv
 # --- 1. CRITICAL SECURITY: Load API Key from Environment ---
 # In your terminal, run this command BEFORE starting RASA:
 # For Linux/macOS: export OPENAI_API_KEY="your_real_api_key_here"
 # For Windows CMD:  set OPENAI_API_KEY="your_real_api_key_here"
 # For PowerShell:   $env:OPENAI_API_KEY="your_real_api_key_here"
-os.environ["OPEN_API_KEY"] = "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"
+
+load_dotenv()
+
 # api_key = os.getenv("OPENAI_API_KEY")
 # if not api_key:
 #     raise ValueError("OPENAI_API_KEY environment variable not set. Please set it before running the action server.")
 
-client = OpenAI(api_key=os.environ.get("OPEN_API_KEY"))
+client = OpenAI(api_key=os.environ.get("MY_SECRET_API_KEY"))
 
 # --- 2. DYNAMIC MODEL LOADING LOGIC ---
 
