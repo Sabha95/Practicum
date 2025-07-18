@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Emotion Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* CSS styles remain the same as before */
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; background-color: #f4f7f6; }
+        #chart-container { width: 80%; max-width: 1000px; margin-top: 20px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; }
+        button:hover { background-color: #0056b3; }
+        h1, h2 { color: #333; }
+        .status { font-style: italic; color: #555; }
+    </style>
+</head>
+<body>
+
+    <h1>User Emotion Dashboard</h1>
+    <div id="user-buttons">
+        <h2>Select a User to View Emotion History:</h2>
+        <!-- Buttons for each user will be dynamically created here -->
+    </div>
+
+    <div id="chart-container">
+        <p id="status-message" class="status">Loading data from server...</p>
+        <canvas id="emotionChart"></canvas>
+    </div>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:5000/api/chatlogs'; // The URL of your Flask backend
+        const ctx = document.getElementById('emotionChart').getContext('2d');
+        const statusMessage = document.getElementById('status-message');
+        let emotionChart; // This variable will hold our chart instance
+         // Get query parameters from the URL
+        const params = new URLSearchParams(window.location.search);
+
+        // Extract the 'user' parameter
+        const nickname = params.get('user');
+
+        const emotionColors = { /* Color palette remains the same */ neutral: 'rgba(150, 150, 150, 0.7)', sadness: 'rgba(54, 162, 235, 0.7)', anger: 'rgba(255, 99, 132, 0.7)', fear: 'rgba(153, 102, 255, 0.7)', joy: 'rgba(255, 206, 86, 0.7)', surprise: 'rgba(75, 192, 192, 0.7)', suggestion: 'rgba(255, 159, 64, 0.7)' };
+
+        // --- Main function to fetch data and initialize the app ---
+        async function initializeApp() {
+            try {
+                // 1. Fetch the data from the REST API
+                const response = await fetch('/api/chatlogs', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                nickname:nickname
+        })
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const chatData = await response.json();
+                statusMessage.style.display = 'none'; // Hide loading message
+
+                // 2. Once data is loaded, build the UI
+                setupUI(chatData);
+
+            } catch (error) {
+                console.error("Failed to fetch chat data:", error);
+                statusMessage.textContent = "Error: Could not connect to the backend server. Please ensure it is running.";
+                statusMessage.style.color = 'red';
+            }
+        }
+
+        function setupUI(chatData) {
+            const buttonContainer = document.getElementById('user-buttons');
+
+            // Create buttons for each user
+            for (const userName in chatData) {
+                if (chatData[userName].consent && chatData[userName].emotions.length > 0) {
+                    const button = document.createElement('button');
+                    button.innerText = userName;
+                    button.addEventListener('click', () => renderChartForUser(userName, chatData));
+                    buttonContainer.appendChild(button);
+                }
+            }
+
+            // Render a chart for the first available user on page load
+            const firstUser = Object.keys(chatData).find(u => chatData[u].consent && chatData[u].emotions.length > 0);
+            if (firstUser) {
+                renderChartForUser(firstUser, chatData);
+            } else {
+                 statusMessage.textContent = "No users with emotion data found.";
+                 statusMessage.style.display = 'block';
+            }
+        }
+
+        // This function now receives the full chatData object
+        function renderChartForUser(userName, chatData) {
+            const userData = chatData[userName];
+            const dailyEmotionCounts = {};
+            const allEmotions = new Set();
+
+            // Data processing logic remains the same as before
+            userData.emotions.forEach(entry => {
+                const date = entry.time.split(' ')[0];
+                const emotion = entry.emotion;
+                allEmotions.add(emotion);
+                if (!dailyEmotionCounts[date]) dailyEmotionCounts[date] = {};
+                if (!dailyEmotionCounts[date][emotion]) dailyEmotionCounts[date][emotion] = 0;
+                dailyEmotionCounts[date][emotion]++;
+            });
+
+            const labels = Object.keys(dailyEmotionCounts).sort();
+            const datasets = Array.from(allEmotions).map(emotion => {
+                const data = labels.map(label => dailyEmotionCounts[label][emotion] || 0);
+                return { label: emotion.charAt(0).toUpperCase() + emotion.slice(1), data: data, borderColor: emotionColors[emotion] || 'gray', backgroundColor: emotionColors[emotion] || 'gray', fill: false, tension: 0.1 };
+            });
+
+            // Destroy old chart and render new one
+            if (emotionChart) emotionChart.destroy();
+            emotionChart = new Chart(ctx, { type: 'line', data: { labels, datasets }, options: { /* Options are the same */ responsive: true, plugins: { legend: { position: 'top' }, title: { display: true, text: `Emotion Frequency for ${userName}`, font: { size: 18 } } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } } } });
+        }
+
+        // Start the application when the page loads
+        document.addEventListener('DOMContentLoaded', initializeApp);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion History</title>
+</head>
+<body class="container mt-4">
+    <h2>Your Emotion History</h2>
+    {% if emotion_data %}
+        <ul>
+        {% for entry in emotion_data %}
+            <li><strong>{{ entry.time }}</strong>: "{{ entry.text }}" → <em>{{ entry.emotion }}</em></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No emotion data logged yet.</p>
+    {% endif %}
+    <a href="/" class="btn btn-secondary mt-3">Back to Chat</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<form method="POST" action="/consent">
+    <label>Do you give consent to store your nickname?</label><br>
+    <input type="radio" name="consent" value="yes" required> Yes<br>
+    <input type="radio" name="consent" value="no" required> No<br><br>
+
+    <div id="nicknameField" style="display: none;">
+        <label>Enter your nickname:</label>
+        <input type="text" name="nickname">
+    </div>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <button type="submit">Submit</button>
+
+    <script>
+    const radios = document.querySelectorAll('input[name="consent"]');
+    const nicknameField = document.getElementById('nicknameField');
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            nicknameField.style.display = (radio.value === 'yes') ? 'block' : 'none';
+        });
+    });
+    </script>
+</form>

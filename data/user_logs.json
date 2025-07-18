@@ -1,0 +1,437 @@
+{
+  "Rajesh": {
+    "nickname": "Rajesh",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-13 12:06",
+        "text": "Hi",
+        "emotion": "neutral"
+      },
+      {
+        "time": "2025-07-13 12:06",
+        "text": "I am not well ",
+        "emotion": "sadness"
+      },
+      {
+        "time": "2025-07-13 12:06",
+        "text": "i feel stressed about my exams",
+        "emotion": "anger"
+      },
+      {
+        "time": "2025-07-13 16:51",
+        "text": "HI",
+        "emotion": "neutral"
+      },
+      {
+        "time": "2025-07-13 16:53",
+        "text": "Hi",
+        "emotion": "neutral"
+      },
+      {
+        "time": "2025-07-13 16:54",
+        "text": "HI",
+        "emotion": "neutral"
+      },
+      {
+        "time": "2025-07-13 17:04",
+        "text": "i am stressed about my exams",
+        "emotion": "anger"
+      },
+      {
+        "time": "2025-07-13 17:05",
+        "text": "i am not going to fail the exams",
+        "emotion": "sadness"
+      },
+      {
+        "time": "2025-07-13 17:05",
+        "text": "what if i dont ",
+        "emotion": "fear"
+      }
+    ],
+    "feedback": []
+  },
+  "Aakash": {
+    "nickname": "Aakash",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-13 12:38",
+        "text": "Hi",
+        "emotion": "neutral"
+      }
+    ],
+    "feedback": []
+  },
+  "Asmita": {
+    "nickname": "Asmita",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-13 13:07",
+        "text": "Hi",
+        "emotion": "neutral"
+      },
+      {
+        "time": "2025-07-13 13:08",
+        "text": "i am feeling stressed",
+        "emotion": "anger"
+      },
+      {
+        "time": "2025-07-13 13:10",
+        "text": "know one talks to me in the class, i feel alone",
+        "emotion": "sadness"
+      },
+      {
+        "time": "2025-07-13 13:19",
+        "text": "the classes timings are not fesible and i have to work part time ",
+        "emotion": "fear"
+      },
+      {
+        "time": "2025-07-13 13:21",
+        "text": "Also your answer should mention that you have to schedule your time accordingly , and as a student give less priority to part time and concentrate on your studies",
+        "emotion": "suggestion"
+      },
+      {
+        "time": "2025-07-17 12:48",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 12:49",
+        "text": "i feel overwhelmed",
+        "emotion": "surprise",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 12:51",
+        "text": "Thanks , i am feel stressed about my submissions  ",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 12:57",
+        "text": "i feel peer pressure ",
+        "emotion": "fear",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 13:18",
+        "text": "Thanks",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      }
+    ],
+    "feedback": [
+      {
+        "time": "2025-07-17 12:48",
+        "bot_response": "Hello! How can I assist you today?",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "Hi"
+      },
+      {
+        "time": "2025-07-17 12:49",
+        "bot_response": "It's important to take care of yourself when you're feeling overwhelmed. Here are a few things you can try:- Take a break: Step away from the situation for a few minutes. Go for a walk, listen to music, or do something that helps you relax.- Breathe deeply: Close your eyes and take slow, deep breaths. Focus on your breathing and try to clear your mind of other thoughts.- Break it down: If you have a lot to do, try breaking it down into smaller tasks. Focus on completing one small task at a time, rather than thinking about the whole overwhelming project.- Reach out for support: Talk to a friend, family member, therapist, or counselor about how you're feeling. Sometimes just sharing your feelings can help lighten the load.- Practice self-care: Take a hot bath, read a book, cook a nice meal, or do something else that helps you relax and recharge. Taking care of yourself is important, especially when you're feeling overwhelmed.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i feel overwhelmed"
+      },
+      {
+        "time": "2025-07-17 12:50",
+        "bot_response": "It's important to take care of yourself when you're feeling overwhelmed. Here are a few things you can try:- Take a break: Step away from the situation for a few minutes. Go for a walk, listen to music, or do something that helps you relax.- Breathe deeply: Close your eyes and take slow, deep breaths. Focus on your breathing and try to clear your mind of other thoughts.- Break it down: If you have a lot to do, try breaking it down into smaller tasks. Focus on completing one small task at a time, rather than thinking about the whole overwhelming project.- Reach out for support: Talk to a friend, family member, therapist, or counselor about how you're feeling. Sometimes just sharing your feelings can help lighten the load.- Practice self-care: Take a hot bath, read a book, cook a nice meal, or do something else that helps you relax and recharge. Taking care of yourself is important, especially when you're feeling overwhelmed.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i feel overwhelmed"
+      }
+    ]
+  },
+  "bhakti": {
+    "nickname": "bhakti",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-13 18:08",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 18:14",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      }
+    ],
+    "feedback": []
+  },
+  "Keyuri": {
+    "nickname": "Keyuri",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-13 18:45",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 18:46",
+        "text": "i am stressed about my dessertation",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 18:46",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 18:48",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 18:52",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 18:57",
+        "text": "HI",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 19:00",
+        "text": "I am not feeling good",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 19:02",
+        "text": "HI",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 19:04",
+        "text": "i how are you ",
+        "emotion": "fear",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-15 12:09",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-15 12:10",
+        "text": "I am not feeling very good ",
+        "emotion": "joy",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-15 12:12",
+        "text": "i am scared about my exams",
+        "emotion": "fear",
+        "emotion_feedback": "isPositive"
+      }
+    ],
+    "feedback": [
+      {
+        "time": "2025-07-13 19:02",
+        "bot_response": "Hello! How can I assist you today?",
+        "feedback": true,
+        "emotion_feedback": "isPositive",
+        "reward": 1,
+        "user_message": "Hi"
+      },
+      {
+        "time": "2025-07-13 19:04",
+        "bot_response": "I'm just a computer program, so I don't have feelings. But I'm here to help you with anything you need. How can I assist you today?",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "How are you "
+      },
+      {
+        "time": "2025-07-15 12:11",
+        "bot_response": "I am sorry to hear that. Can you tell me a bit more about what is going on?",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "I am not feeling very good "
+      },
+      {
+        "time": "2025-07-15 12:11",
+        "bot_response": "I am sorry to hear that. Can you tell me a bit more about what is going on?",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "I am not feeling very good "
+      },
+      {
+        "time": "2025-07-15 12:12",
+        "bot_response": "It is normal to feel scared before exams. To help manage your fear, try the following: 1) Take deep breaths to calm yourself. 2) Break your study material into small, manageable sections. 3) Create a study schedule and stick to it. 4) Get a good night's sleep before the exam. 5) Remember that exams do not define your worth as a person. You are capable and you have prepared to the best of your ability. Good luck!",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i am scared about my exams"
+      }
+    ]
+  },
+  "Tarun": {
+    "nickname": "Tarun",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-13 21:26",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-13 21:26",
+        "text": " i dont want to live anymore",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      }
+    ],
+    "feedback": [
+      {
+        "time": "2025-07-13 21:26",
+        "bot_response": "Hello! How can I help you today?",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "Hi"
+      },
+      {
+        "time": "2025-07-13 21:27",
+        "bot_response": "If you are feeling suicidal, please know that help is available. You are not alone. Contact a mental health professional, call a suicide hotline, or go to the nearest emergency room. You deserve to be safe and supported.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": " i dont want to live anymore"
+      }
+    ]
+  },
+  "Ajay": {
+    "nickname": "Ajay",
+    "consent": true,
+    "emotions": [],
+    "feedback": [
+      {
+        "time": "2025-07-15 08:26",
+        "bot_response": "Sorry, i did not understand that. ",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": "Hi"
+      }
+    ]
+  },
+  "Shradha": {
+    "nickname": "Shradha",
+    "consent": true,
+    "emotions": [],
+    "feedback": [
+      {
+        "time": "2025-07-15 10:33",
+        "bot_response": "Sorry, i did not understand that. ",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "Hi"
+      }
+    ]
+  },
+  "Sayli": {
+    "nickname": "Sayli",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-15 11:27",
+        "text": "hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      }
+    ],
+    "feedback": []
+  },
+  "Anonymous 1": {
+    "nickname": "Anonymous 1",
+    "consent": false,
+    "emotions": [],
+    "feedback": []
+  },
+  "Sanjana": {
+    "nickname": "Sanjana",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-17 17:09",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 17:10",
+        "text": "My frined is not talking with me and i feel stressed about it",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 17:28",
+        "text": "i feel i had a panic attack",
+        "emotion": "fear",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 21:42",
+        "text": "i have manage everthing on my own , i feel overwhlemed",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 21:43",
+        "text": "texted friend she said fuck off ",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 21:43",
+        "text": "so what to do ",
+        "emotion": "fear",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-17 23:50",
+        "text": "hI",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      }
+    ],
+    "feedback": [
+      {
+        "time": "2025-07-17 17:10",
+        "bot_response": "It's natural to feel stressed when a friend is not talking to you. Try to give them some space and time to cool off, then reach out to them in a calm and non-confrontational manner. Let them know that you value their friendship and are willing to talk things out. In the meantime, take care of yourself by spending time with other friends, engaging in activities that make you happy, and practicing self-care. Sometimes, a little time and communication can help repair a strained relationship.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "My frined is not talking with me and i feel stressed about it"
+      },
+      {
+        "time": "2025-07-17 17:10",
+        "bot_response": "It's natural to feel stressed when a friend is not talking to you. Try to give them some space and time to cool off, then reach out to them in a calm and non-confrontational manner. Let them know that you value their friendship and are willing to talk things out. In the meantime, take care of yourself by spending time with other friends, engaging in activities that make you happy, and practicing self-care. Sometimes, a little time and communication can help repair a strained relationship.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "My frined is not talking with me and i feel stressed about it"
+      },
+      {
+        "time": "2025-07-17 21:42",
+        "bot_response": "It's important to remember that you don't have to do everything on your own. It's okay to ask for help when you need it. Reach out to friends, family, or a therapist for support. Delegate tasks if possible, and remember to take breaks and practice self-care. You don't have to carry the burden alone.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i have manage everthing on my own , i feel overwhlemed"
+      }
+    ]
+  }
+}
