@@ -11,7 +11,7 @@ from rasa_sdk.executor import CollectingDispatcher
 # For Linux/macOS: export OPENAI_API_KEY="your_real_api_key_here"
 # For Windows CMD:  set OPENAI_API_KEY="your_real_api_key_here"
 # For PowerShell:   $env:OPENAI_API_KEY="your_real_api_key_here"
-os.environ["OPEN_API_KEY"] = "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"
+os.environ["OPEN_API_KEY"] = ""
 # api_key = os.getenv("OPENAI_API_KEY")
 # if not api_key:
 #     raise ValueError("OPENAI_API_KEY environment variable not set. Please set it before running the action server.")

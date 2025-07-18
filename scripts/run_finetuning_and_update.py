@@ -16,7 +16,7 @@ TRAINING_FILE_PATH = "rl_data/reward.jsonl"
 
 # The file that tracks the lineage of your models.
 MODEL_TRACKING_FILE = "models/latest_gpt_model.txt"
-os.environ["OPEN_API_KEY"] = "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"
+os.environ["OPEN_API_KEY"] = ""
 
 
 def get_model_to_improve() -> str:
