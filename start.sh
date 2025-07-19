@@ -1,4 +1,11 @@
 #!/bin/bash
-echo "Starting Rasa on port $PORT..."
+
+echo "TESTING CLI..."
+
+which rasa
+rasa --version
+
 PORT=${PORT:-5005}
-rasa run --enable-api --port $PORT --host 0.0.0.0 --cors "*" --debug
+echo "Trying command:"
+echo "rasa run --port $PORT --enable-api --host 0.0.0.0"
+rasa run --port $PORT --enable-api --host 0.0.0.0 --debug
