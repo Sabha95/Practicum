@@ -7,3 +7,92 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: Respond to suicidal thoughts IMMEDIATELY
+  steps:
+  - intent: express_suicidal_thoughts
+  - action: utter_crisis_support
+
+- rule: Provide TIPP skill for panic attacks
+  steps:
+  - intent: ask_for_panic_attack_help
+  - action: utter_tipp_skill
+
+- rule: Provide Thought Record for negative self-talk
+  steps:
+  - intent: ask_for_negative_self_talk_help
+  - action: utter_thought_record
+
+- rule: Provide grounding skill for dissociation
+  steps:
+  - intent: ask_for_grounding_help
+  - action: utter_54321_grounding
+
+- rule: Provide STOP skill for impulse control
+  steps:
+  - intent: ask_for_impulse_control_help
+  - action: utter_stop_skill
+
+- rule: Provide worry time skill
+  steps:
+  - intent: ask_for_worry_help
+  - action: utter_worry_time
+
+- rule: Provide activity scheduling for motivation
+  steps:
+  - intent: ask_for_motivation_help
+  - action: utter_activity_scheduling
+
+- rule: Provide opposite action skill
+  steps:
+  - intent: ask_for_emotion_regulation_help
+  - action: utter_opposite_action
+
+- rule: Provide DEAR MAN skill for assertiveness
+  steps:
+  - intent: ask_for_assertiveness_help
+  - action: utter_dear_man_skill
+
+- rule: Provide radical acceptance skill
+  steps:
+  - intent: ask_for_acceptance_help
+  - action: utter_radical_acceptance
+
+- rule: Provide wise mind skill
+  steps:
+  - intent: ask_for_wise_mind_help
+  - action: utter_wise_mind
+
+- rule: Provide PLEASE skill for resilience
+  steps:
+  - intent: ask_for_resilience_help
+  - action: utter_please_skill
+
+- rule: Provide container skill for flashbacks
+  steps:
+  - intent: ask_for_flashback_help
+  - action: utter_container_exercise
+
+- rule: Provide safe place visualization
+  steps:
+  - intent: ask_for_safety_visualization_help
+  - action: utter_safe_place_visualization
+
+- rule: Provide perspective shift for guilt
+  steps:
+  - intent: ask_for_guilt_help
+  - action: utter_shifting_perspective
+
+- rule: Provide help for confidence
+  steps:
+  - intent: ask_for_confidence_help
+  - action: utter_confidence_help
+
+- rule: Provide help for mindfulness
+  steps:
+  - intent: ask_for_mindfulness_help
+  - action: utter_mindfulness_help
+
+- rule: Handle fallback with GPT-3
+  steps:
+  - intent: nlu_fallback
+  - action: action_generate_llm_response

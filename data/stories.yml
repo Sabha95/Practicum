@@ -7,3 +7,28 @@ stories:
   - intent: greet
   - action: action_generate_llm_response
 
+- story: User feels bad and bot probes
+  steps:
+  - intent: express_general_distress
+  - action: utter_ask_for_more_info
+
+- story: User feels overwhelmed
+  steps:
+  - intent: express_general_distress
+  - action: utter_respond_overwhelmed
+
+- story: User is scared about exams
+  steps:
+  - intent: express_general_distress
+  - action: utter_respond_exam_scare
+
+- story: User has a friend issue
+  steps:
+  - intent: express_general_distress
+  - action: utter_respond_friend_issue
+
+- story: User is struggling with social anxiety
+  steps:
+  - intent: express_general_distress
+  - action: utter_social_anxiety_help
+

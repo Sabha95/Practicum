@@ -89,3 +89,93 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: express_general_distress
+  examples: |
+    - I am not feeling very good
+    - i feel overwhelmed
+    - i have manage everthing on my own , i feel overwhlemed
+    - i am scared about my exams
+    - My frined is not talking with me and i feel stressed about it
+    - I'm struggling with social anxiety when I go out. What can I do?
+    - How can I deal with insomnia due to stress?
+
+- intent: express_suicidal_thoughts
+  examples: |
+    - i dont want to live anymore
+
+- intent: ask_for_panic_attack_help
+  examples: |
+    - Feeling of a Panic Attack / Extreme Emotional Distress
+    - What are some quick exercises to help with a panic attack?
+    - Acute Crisis & Panic Attack
+    - Panic and Physiological Overload
+
+- intent: ask_for_negative_self_talk_help
+  examples: |
+    - Spiraling Negative Self-Talk
+
+- intent: ask_for_grounding_help
+  examples: |
+    - Feeling Ungrounded or Dissociated
+    - Feeling Numb or Detached (Dissociation)
+    - Feeling Agitated, Overwhelmed, or Ungrounded
+
+- intent: ask_for_impulse_control_help
+  examples: |
+    - Urge to Act Impulsively (Lash Out, Self-Harm, Use Substances)
+    - Painful Rumination & Urges to Act Impulsively
+
+- intent: ask_for_worry_help
+  examples: |
+    - Chronic Worry and Catastrophizing
+
+- intent: ask_for_motivation_help
+  examples: |
+    - Feeling Depressed, Apathetic, and Unmotivated
+
+- intent: ask_for_emotion_regulation_help
+  examples: |
+    - Feeling Overwhelmed by an Unjustified or Unhelpful Emotion
+    - An Emotion That Doesn't Fit the Facts or is Unhelpful
+
+- intent: ask_for_assertiveness_help
+  examples: |
+    - Needing to Make a Request or Say No Effectively
+
+- intent: ask_for_acceptance_help
+  examples: |
+    - Suffering from Non-Acceptance of Reality
+
+- intent: ask_for_wise_mind_help
+  examples: |
+    - Being Torn Between Emotional and Logical Decisions
+
+- intent: ask_for_resilience_help
+  examples: |
+    - Reducing Emotional Vulnerability and Volatility
+
+- intent: ask_for_flashback_help
+  examples: |
+    - Flashback or Intrusive Memory
+    - Intrusive Thoughts or Memories That Won't Stop
+
+- intent: ask_for_safety_visualization_help
+  examples: |
+    - Hypervigilance and Feeling Unsafe
+
+- intent: ask_for_guilt_help
+  examples: |
+    - Overwhelming Guilt or Self-Blame
+
+- intent: ask_for_confidence_help
+  examples: |
+    - How do I build self-confidence after failure?
+
+- intent: ask_for_mindfulness_help
+  examples: |
+    - What mindfulness techniques can I practice daily?
+
+- intent: nlu_fallback
+  examples: |
+    - What can you not understand

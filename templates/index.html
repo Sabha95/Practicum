@@ -39,7 +39,7 @@
 
 </head>
 <body>
-    <h1>Chat with our Bot</h1>
+    <h1>ResiliBot</h1>
     <h2>Hello {{ nickname if nickname else 'User' }}</h2>
     <button onclick="viewEmotionHistory()" class="btn btn-secondary mt-2">View Emotion History</button>
     <div id="chat-window" class="container">
@@ -47,6 +47,9 @@
         <input id="user-input" class="form-control" type="text" placeholder="Type your message..." />
         <input type="hidden" id="nickname" value="{{ nickname if nickname else 'User' }}">
         <button onclick="sendMessage()" class="btn btn-primary">Send</button>
+        <div class="disclaimer">
+  ⚠️ This chatbot is not a substitute for professional mental health care. If you're in crisis, please contact a licensed mental health provider.
+</div>
     </div>
     <script>
     let lastUserMessage = "";
@@ -107,6 +110,7 @@
     });
 }
     </script>
+
 </body>
 </html>
 

@@ -47,9 +47,35 @@
         "time": "2025-07-13 17:05",
         "text": "what if i dont ",
         "emotion": "fear"
+      },
+      {
+        "time": "2025-07-18 18:42",
+        "text": "hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 18:43",
+        "text": "hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 18:46",
+        "text": "i feel overwhelmed",
+        "emotion": "surprise",
+        "emotion_feedback": "isPositive"
       }
     ],
-    "feedback": []
+    "feedback": [
+      {
+        "time": "2025-07-18 18:46",
+        "bot_response": "Hello! How can I assist you today?",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "hi"
+      }
+    ]
   },
   "Aakash": {
     "nickname": "Aakash",
@@ -187,6 +213,36 @@
         "text": "What if i dont clear my exams",
         "emotion": "anger",
         "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 14:29",
+        "text": "i am not feeling so goood",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 14:29",
+        "text": "i cant concentrate",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 14:30",
+        "text": "i am not feeling so goood",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 14:30",
+        "text": "What if i fail",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 14:32",
+        "text": "YOu dont know anything",
+        "emotion": "surprise",
+        "emotion_feedback": "isPositive"
       }
     ],
     "feedback": [
@@ -203,6 +259,27 @@
         "feedback": "isPositive",
         "reward": 1,
         "user_message": "What if i dont clear my exams"
+      },
+      {
+        "time": "2025-07-20 14:30",
+        "bot_response": "It's important to take breaks and give your brain a rest. Try taking a short walk, doing a quick meditation, or listening to some music. When you come back to your work, you may find that you're able to concentrate better.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i cant concentrate"
+      },
+      {
+        "time": "2025-07-20 14:30",
+        "bot_response": "I am sorry to hear that. Can you tell me a bit more about what is going on?",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": "i am not feeling so goood"
+      },
+      {
+        "time": "2025-07-20 14:30",
+        "bot_response": "Failure is a natural part of life and a valuable learning experience. It does not define your worth as a person. If you fail, it simply means that you need to try again, learn from your mistakes, and approach the situation in a different way. Remember that many successful people have faced failure multiple times before achieving their goals. Stay resilient, keep a positive attitude, and use your failure as a stepping stone to future success.",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": "What if i fail"
       }
     ]
   },
@@ -373,7 +450,80 @@
   "Shradha": {
     "nickname": "Shradha",
     "consent": true,
-    "emotions": [],
+    "emotions": [
+      {
+        "time": "2025-07-19 14:24",
+        "text": " i have depression",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:25",
+        "text": "",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:25",
+        "text": "",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:25",
+        "text": "I LOVE MY SISTER",
+        "emotion": "joy",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:26",
+        "text": "I HAVE SOmething called depression",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:26",
+        "text": "can you suggest me to overcome depression",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:35",
+        "text": "how do i create a catalogue for buying menswear",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:36",
+        "text": "what steps",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:37",
+        "text": "i have cold, and i want to recover faster",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:38",
+        "text": "how do i recover from breakup",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:39",
+        "text": "HOw do i recover from drowning traum",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-19 14:44",
+        "text": "thank you",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      }
+    ],
     "feedback": [
       {
         "time": "2025-07-15 10:33",
@@ -381,6 +531,62 @@
         "feedback": "isPositive",
         "reward": 1,
         "user_message": "Hi"
+      },
+      {
+        "time": "2025-07-19 14:24",
+        "bot_response": "Bye",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": " i have depression"
+      },
+      {
+        "time": "2025-07-19 14:26",
+        "bot_response": "I am not a mental health professional, but I can offer some general suggestions. However, it is important to seek help from a qualified therapist or counselor if you are struggling with depression. Some things that may help include: talking to a therapist or counselor, practicing self-care activities such as exercise, getting enough sleep, eating a healthy diet, and taking time to relax, staying connected with supportive friends and family members, challenging negative thoughts and beliefs, setting realistic goals and taking small steps to achieve them, and considering medication or other treatments recommended by a mental health professional.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "can you suggest me to overcome depression"
+      },
+      {
+        "time": "2025-07-19 14:34",
+        "bot_response": "Sorry, i did not understand that. ",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": "how do i get a new job"
+      },
+      {
+        "time": "2025-07-19 14:36",
+        "bot_response": "1. Identify the goal: Clearly define what you want to achieve.2. Break it down into smaller tasks: Divide the goal into manageable steps.3. Create a plan: Determine the order in which you will complete the tasks and set deadlines for each step.4. Gather the necessary resources: Make sure you have all the tools, information, and support you need to complete the tasks.5. Take action: Start working on the first task in your plan. Focus on one step at a time to avoid feeling overwhelmed.6. Monitor your progress: Regularly review how far you have come and adjust your plan if necessary.7. Overcome obstacles: If you encounter difficulties, brainstorm solutions, seek help, or adjust your approach.8. Complete the goal: Keep working through your plan until all the tasks are finished. Celebrate your success when you reach the end.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "what steps"
+      },
+      {
+        "time": "2025-07-19 14:36",
+        "bot_response": "1. Identify the goal: Clearly define what you want to achieve.2. Break it down into smaller tasks: Divide the goal into manageable steps.3. Create a plan: Determine the order in which you will complete the tasks and set deadlines for each step.4. Gather the necessary resources: Make sure you have all the tools, information, and support you need to complete the tasks.5. Take action: Start working on the first task in your plan. Focus on one step at a time to avoid feeling overwhelmed.6. Monitor your progress: Regularly review how far you have come and adjust your plan if necessary.7. Overcome obstacles: If you encounter difficulties, brainstorm solutions, seek help, or adjust your approach.8. Complete the goal: Keep working through your plan until all the tasks are finished. Celebrate your success when you reach the end.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "what steps"
+      },
+      {
+        "time": "2025-07-19 14:37",
+        "bot_response": "To recover from a cold faster, you can try the following remedies:- Get plenty of rest to allow your body to focus on fighting off the virus.- Stay hydrated by drinking lots of water, herbal tea, and clear broths.- Gargle with salt water to soothe a sore throat.- Use a humidifier or take a steamy shower to help clear your nasal passages.- Take over-the-counter cold medications, such as decongestants or pain relievers, as needed.- Eat a healthy diet rich in fruits, vegetables, and immune-boosting foods like garlic and ginger.- Wash your hands frequently to prevent spreading the virus to others.- If your symptoms persist or worsen, see a doctor.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i have cold, and i want to recover faster"
+      },
+      {
+        "time": "2025-07-19 14:38",
+        "bot_response": "Recovering from a breakup can be a difficult and painful process, but it is important to take care of yourself and give yourself time to heal. Here are some tips to help you recover: 1. Allow yourself to grieve: It is normal to feel sad, angry, and heartbroken after a breakup. Allow yourself to feel these emotions and grieve the loss of the relationship. 2. Lean on your support system: Reach out to friends and family members for emotional support. Talking about your feelings with a trusted loved one can help you feel less alone. 3. Take care of yourself: During this difficult time, it is important to take care of your physical and emotional well-being. Make sure to eat healthily, exercise, get plenty of rest, and engage in activities that bring you joy. 4. Avoid contact with your ex: In the immediate aftermath of the breakup, it is best to avoid contact with your ex-partner. This will give you the space and time you need to heal and move on. 5. Stay busy: Keep yourself distracted by staying busy with work, hobbies, and social activities. This will help take your mind off the breakup and allow you to focus on yourself and your own happiness. 6. Seek professional help if needed: If you are struggling to cope with the breakup, consider seeking the help of a therapist or counselor. A mental health professional can provide you with the support and guidance you need to heal and move forward.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "how do i recover from breakup"
+      },
+      {
+        "time": "2025-07-19 14:44",
+        "bot_response": "Bye",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "thank you"
       }
     ]
   },
@@ -399,9 +605,215 @@
         "text": "I am mad at my girlfriend, and hence cant concentrrate on my studies",
         "emotion": "anger",
         "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 19:51",
+        "text": "I cant study ",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 19:56",
+        "text": "i cant concentrate",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 19:58",
+        "text": "i face alot of peer pressure",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 19:58",
+        "text": "I cant study though",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 20:02",
+        "text": "i feel bored of studing",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-18 20:03",
+        "text": "i dont feel very good about my self, i feel i am not confident enough",
+        "emotion": "joy",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:17",
+        "text": "Hello",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:17",
+        "text": "I'm feeling lonely",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:17",
+        "text": "",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:17",
+        "text": "",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:18",
+        "text": "my partner is away from me :(",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:19",
+        "text": "she does not give me attention",
+        "emotion": "anger",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:20",
+        "text": "she is always busy, its either studies or part time or something else each time",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:21",
+        "text": "even if i suggest something she always has some excuses to give me",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:22",
+        "text": "bye thanks for you help",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 16:31",
+        "text": ":)",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:09",
+        "text": "Hi",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:09",
+        "text": "i feel lonely, and have no one to talk with",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:10",
+        "text": " i feel lonely, and have no one to talk with  Bot: Bye",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:10",
+        "text": " i feel lonely, and have no one to talk about anything",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:13",
+        "text": "HI ",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:14",
+        "text": "",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:14",
+        "text": "",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:14",
+        "text": "i feel lonely , have no one to talk",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:14",
+        "text": " i feel lonely",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 18:14",
+        "text": "how can i make new friends",
+        "emotion": "surprise",
+        "emotion_feedback": "isPositive"
       }
     ],
-    "feedback": []
+    "feedback": [
+      {
+        "time": "2025-07-18 19:58",
+        "bot_response": "It's important to remember that you always have a choice, and you don't have to give in to peer pressure. Here are a few tips for handling peer pressure: 1) Be true to yourself: Know your values and beliefs, and don't compromise them for anyone. 2) Surround yourself with positive influences: Hang out with friends who respect and support you. 3) Practice saying 'no': Be firm and confident in declining any offers or requests that make you uncomfortable. 4) Have an exit strategy: If you find yourself in a situation where you feel pressured, have a plan to politely excuse yourself and leave. 5) Seek help if you need it: Talk to a trusted adult, counselor, or friend if you're feeling overwhelmed by peer pressure. You're not alone, and there are people who care about you and want to help.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i face alot of peer pressure"
+      },
+      {
+        "time": "2025-07-18 19:59",
+        "bot_response": "It's important to take breaks and listen to your body. If you're feeling overwhelmed or unable to focus, try taking a short 5-10 minute break. Go for a walk, listen to music, or do something that helps you relax. Just make sure to set a timer and get back to studying when your break is over. And remember, it's okay to ask for help if you're struggling with the material.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "I cant study though"
+      },
+      {
+        "time": "2025-07-18 20:03",
+        "bot_response": "It's important to remember that confidence is something that can be developed and improved over time. Here are a few tips to help boost your confidence: 1) Focus on your strengths: Think about the things you are good at and the accomplishments you have achieved. Remind yourself of these things when you are feeling insecure. 2) Set small, achievable goals: By setting and reaching small goals, you can build a sense of accomplishment and prove to yourself that you are capable. 3) Practice self-care: Taking care of your physical and mental well-being can help boost your confidence. Make sure to get enough sleep, eat well, exercise, and take time to relax and recharge. 4) Challenge negative thoughts: When you catch yourself thinking negatively about yourself, try to reframe the thought in a more positive light. For example, instead of thinking \"I'm not good enough,\" try thinking \"I am still learning and growing.\" 5) Fake it 'til you make it: Sometimes, simply acting confident can help you feel more confident. Stand up straight, make eye contact, and speak clearly and assertively, even if you don't feel that way on the inside. Over time, this can help build genuine confidence.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "i dont feel very good about my self, i feel i am not confident enough"
+      },
+      {
+        "time": "2025-07-20 16:18",
+        "bot_response": "I'm sorry to hear that. Long distance can be tough, but try to stay connected through phone calls, video chats, and messages. And remember that absence makes the heart grow fonder. Hang in there, and hopefully you'll be reunited soon.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "my partner is away from me :("
+      },
+      {
+        "time": "2025-07-20 16:19",
+        "bot_response": "It is important to communicate openly and honestly with your partner about your needs and feelings. Let her know how you are feeling and express that you would like more attention from her. Ask her if there is a reason for the lack of attention and try to work together to find a solution that works for both of you. It is also important to consider her perspective and be willing to listen to her thoughts and feelings on the matter.",
+        "feedback": "isPositive",
+        "reward": 1,
+        "user_message": "she does not give me attention"
+      },
+      {
+        "time": "2025-07-20 18:10",
+        "bot_response": "Bye",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": "i feel lonely, and have no one to talk with"
+      },
+      {
+        "time": "2025-07-20 18:10",
+        "bot_response": "Bye",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": " i feel lonely, and have no one to talk about anything"
+      }
+    ]
   },
   "Anonymous 1": {
     "nickname": "Anonymous 1",
@@ -498,5 +910,38 @@
     "consent": true,
     "emotions": [],
     "feedback": []
+  },
+  "Vaani": {
+    "nickname": "Vaani",
+    "consent": true,
+    "emotions": [
+      {
+        "time": "2025-07-20 15:20",
+        "text": "Hi ",
+        "emotion": "neutral",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 15:25",
+        "text": "I feel peer pressure",
+        "emotion": "fear",
+        "emotion_feedback": "isPositive"
+      },
+      {
+        "time": "2025-07-20 15:26",
+        "text": "exams are stressing me out",
+        "emotion": "sadness",
+        "emotion_feedback": "isPositive"
+      }
+    ],
+    "feedback": [
+      {
+        "time": "2025-07-20 15:26",
+        "bot_response": "Sorry, i did not understand that. ",
+        "feedback": "isNegative",
+        "reward": -1,
+        "user_message": "what if i dont fit in "
+      }
+    ]
   }
 }
